@@ -5,13 +5,8 @@ public class ParcGratuit extends Case {
     }
 
     @Override
-    public Case avancer(int nbCases) {
-        return super.avancer(nbCases);
-    }
-
-    @Override
     public void joueurArrive(Personnage perso) {
-        super.joueurArrive(perso);
+        System.out.println("Parc gratuit : rien ne se passe.");
     }
 
     @Override

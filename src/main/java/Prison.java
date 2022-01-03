@@ -5,17 +5,8 @@ public class Prison extends Case {
     }
 
     @Override
-    public Case avancer(int nbCases) {
-        return super.avancer(nbCases);
-    }
-
-    @Override
     public void joueurArrive(Personnage perso) {
-        super.joueurArrive(perso);
+        System.out.println("Case prison : Quelle chance, elle n'est pas implémenté !");
     }
 
-    @Override
-    public void setSuivant(Case caseCible) {
-        this.caseSuivante = caseCible;
-    }
 }

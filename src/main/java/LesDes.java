@@ -34,4 +34,7 @@ public class LesDes {
         return getVal1() + getVal2();
     }
 
+    public boolean estDouble(){
+        return getVal1() == getVal2();
+    }
 }

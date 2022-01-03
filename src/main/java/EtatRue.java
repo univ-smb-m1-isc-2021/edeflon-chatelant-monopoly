@@ -1,4 +1,5 @@
 public abstract class EtatRue {
+
     public abstract void joueurArrive(Personnage personne);
 
     public void avancer(int nbCases) {

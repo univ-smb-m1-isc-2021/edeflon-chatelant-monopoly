@@ -6,19 +6,11 @@ public class Taxes extends Case {
         this.prix = prix;
     }
 
-    @Override
-    public Case avancer(int nbCases) {
-        return super.avancer(nbCases);
-    }
-
     //TODO
     @Override
     public void joueurArrive(Personnage perso) {
-        super.joueurArrive(perso);
+        System.out.println("Case Taxe : Vous payez " + prix + "$");
+        perso.debiterSolde(prix);
     }
 
-    @Override
-    public void setSuivant(Case caseCible) {
-        this.caseSuivante = caseCible;
-    }
 }

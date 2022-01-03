@@ -1,5 +1,9 @@
 public class Rue extends Propriete {
     // Arguments
+    private Personnage proprietaire;
+    private EtatRue etatRue;
+    private int prixMaison;
+    private Quartier quartier;
     private int nbMaisons;
     private final int prixAchat;
     private final int loyer;
@@ -8,12 +12,11 @@ public class Rue extends Propriete {
     private final int loyer3M;
     private final int loyer4M;
     private final int loyerH;
-    private EtatRue etatRue;
-    private Quartier quartier;
 
 
     public Rue(String nom, int prixAchat, int loyer, int loyer1M, int loyer2M, int loyer3M, int loyer4M, int loyerH) {
         this.nom = nom;
+        this.etatRue = new RueLibre(this);
         this.prixAchat = prixAchat;
         this.loyer = loyer;
         this.loyer1M = loyer1M;
@@ -28,12 +31,23 @@ public class Rue extends Propriete {
 
     //TODO
     public boolean verifQuartier() {
-        return true;
+        return quartier.verifQuartierComplet();
     }
 
-    //TODO
+    public void addMaison(){quartier.addMaison();}
+
+    public void setQuartierConstructible() {
+        quartier.setQuartierConstructible();
+    }
+
+    public int getPrixMaison(){return quartier.getPrixMaison();}
+
+    public int getPrixAchat() {
+        return prixAchat;
+    }
+
     public int prixConstruction() {
-        return 0;
+        return quartier.getPrixMaison();
     }
 
     public int getMaisons() {
@@ -64,6 +78,10 @@ public class Rue extends Propriete {
         return loyerH;
     }
 
+    public Personnage getProprietaire() {
+        return proprietaire;
+    }
+
     @Override
     public int calculLoyer() {
         if (nbMaisons == 0) {
@@ -82,9 +100,28 @@ public class Rue extends Propriete {
     }
 
     @Override
+    public void joueurArrive(Personnage perso) {
+        etatRue.joueurArrive(perso);
+    }
+
+    @Override
     public void setSuivant(Case caseCible) {
         this.caseSuivante = caseCible;
     }
 
-    public void setQuartier(Quartier newQuartier) { this.quartier = newQuartier; }
+    public void setQuartier(Quartier newQuartier) {
+        this.quartier = newQuartier;
+    }
+
+    public void setEtat(EtatRue e) {
+        this.etatRue = e;
+    }
+
+    public void incrNbMaisons() {
+        this.nbMaisons++;
+    }
+
+    public void setProprietaire(Personnage personne) {
+        this.proprietaire = personne;
+    }
 }

@@ -9,17 +9,16 @@ public class Plateau {
     }
 
     public Case getCaseDepart() {
-        System.out.println("getCaseDepart Plateau : return caseDepart par défaut");
         return caseDepart;
     }
 
     private void creerCase() {
-        CaseDepart depart = new CaseDepart();
+        caseDepart = new CaseDepart();
 
         // Liste de toutes les cases propriétés
         // Param : Nom, loyerVide, loyer1Maison, loyer2Maisons, loyer3Maisons, loyer4Maisons, loyerHotel
         Rue marron1 = new Rue("Boulevard de Belleville", 60, 2, 10, 30, 90, 160, 250);
-        depart.setSuivant(marron1);
+        caseDepart.setSuivant(marron1);
 
         CaisseCommu caisse1 = new CaisseCommu();
         marron1.setSuivant(caisse1);
@@ -134,7 +133,7 @@ public class Plateau {
 
         Rue bleuFonce2 = new Rue("Rue de la paix", 400, 50, 200, 600, 1400, 1700, 2000);
         luxe.setSuivant(bleuFonce2);
-        bleuFonce2.setSuivant(depart);
+        bleuFonce2.setSuivant(caseDepart);
 
 
         // Ajout des propriétés sous liste pour les quartiers
@@ -177,43 +176,58 @@ public class Plateau {
         LbleuF.add(bleuFonce2);
 
         // Les quartiers
-        Quartier marron = new Quartier(Lmarron);
+        Quartier marron = new Quartier(Lmarron, 50);
         marron1.setQuartier(marron);
         marron2.setQuartier(marron);
 
-        Quartier bleuClair = new Quartier(LbleuC);
+        Quartier bleuClair = new Quartier(LbleuC, 50);
         bleuClair1.setQuartier(bleuClair);
         bleuClair2.setQuartier(bleuClair);
         bleuClair3.setQuartier(bleuClair);
 
-        Quartier rose = new Quartier(Lrose);
+        Quartier rose = new Quartier(Lrose, 100);
         rose1.setQuartier(rose);
         rose2.setQuartier(rose);
         rose3.setQuartier(rose);
 
-        Quartier orange = new Quartier(Lorange);
+        Quartier orange = new Quartier(Lorange, 100);
         orange1.setQuartier(orange);
         orange2.setQuartier(orange);
         orange3.setQuartier(orange);
 
-        Quartier rouge = new Quartier(Lrouge);
+        Quartier rouge = new Quartier(Lrouge, 150);
         rouge1.setQuartier(rouge);
         rouge2.setQuartier(rouge);
         rouge3.setQuartier(rouge);
 
-        Quartier jaune = new Quartier(Ljaune);
+        Quartier jaune = new Quartier(Ljaune, 150);
         jaune1.setQuartier(jaune);
         jaune2.setQuartier(jaune);
         jaune3.setQuartier(jaune);
 
-        Quartier vert = new Quartier(Lvert);
+        Quartier vert = new Quartier(Lvert, 200);
         vert1.setQuartier(vert);
         vert2.setQuartier(vert);
         vert3.setQuartier(vert);
 
-        Quartier bleuFonce = new Quartier(LbleuF);
+        Quartier bleuFonce = new Quartier(LbleuF, 200);
         bleuFonce1.setQuartier(bleuFonce);
         bleuFonce2.setQuartier(bleuFonce);
 
+        // Permets aux gares de se connaître mutuellement
+        List<Gare> Lgares = new ArrayList<>();
+        Lgares.add(montparnasse);
+        Lgares.add(lyon);
+        Lgares.add(nord);
+        Lgares.add(saintLazare);
+
+        montparnasse.setGares(Lgares);
+        lyon.setGares(Lgares);
+        nord.setGares(Lgares);
+        saintLazare.setGares(Lgares);
+
+        // Permet aux services de se connaître
+        elec.setOtherService(eaux);
+        eaux.setOtherService(elec);
     }
 }

@@ -5,18 +5,15 @@ public class CaseDepart extends Case{
     }
 
     @Override
-    public Case avancer(int nbCases) {
-        return super.avancer(nbCases);
+    public Case avancer(Personnage p, int nbCases) {
+        p.créditerSolde(200);
+        return super.avancer(p, nbCases);
     }
 
-    //TODO
+    //TODO a vérifier si laisser
     @Override
     public void joueurArrive(Personnage perso) {
-        super.joueurArrive(perso);
-    }
-
-    @Override
-    public void setSuivant(Case caseCible){
-        this.caseSuivante = caseCible;
+        System.out.println(perso.nom + "sur la case " + this.nom + ".");
+        perso.créditerSolde(200);
     }
 }

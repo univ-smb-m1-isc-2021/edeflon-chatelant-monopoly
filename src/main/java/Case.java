@@ -2,13 +2,19 @@ public abstract class Case {
     String nom;
     public Case caseSuivante;
 
-    public Case avancer(int nbCases) {
-        System.out.println("Case, méthode avancer : return caseSuivante par défaut");
-        return caseSuivante;
+    public Case avancer(Personnage p, int nbCases) {
+        if (nbCases == 0) {
+            System.out.println("Case d'arrivée : " + this.nom);
+            return this;
+        } else {
+            return caseSuivante.avancer(p, nbCases - 1);
+        }
     }
 
-    public void joueurArrive(Personnage perso) {
-    }
+    public abstract void joueurArrive(Personnage perso);
 
-    public abstract void setSuivant(Case caseCible);
+    // Pour création des cases
+    public void setSuivant(Case caseCible) {
+        this.caseSuivante = caseCible;
+    }
 }
