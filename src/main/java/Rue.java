@@ -1,4 +1,3 @@
-
 public class Rue extends Propriete {
     // Arguments
     public int nbMaisons;
@@ -7,16 +6,19 @@ public class Rue extends Propriete {
 
     // Methodes
     public boolean verifQuartier() {
+        return true;
     }
 
     public int prixConstruction() {
+        return 0;
     }
 
     public int getMaisons() {
+        return 0;
     }
 
     @Override
-    public void calculLoyer() {
-
+    public int calculLoyer() {
+        return 0;
     }
 }

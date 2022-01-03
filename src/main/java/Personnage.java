@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Personnage {
     public int solde;
     public Case position;
 
     public List<Propriete> mesProprietes = new ArrayList<Propriete> ();
 
-    public void setPosition(Case case) {
+    public void setPosition(Case caseCible) {
     }
 
     public void aToiDeJouer(LesDes des) {
@@ -28,7 +27,7 @@ public class Personnage {
         return false;
     }
 
-    public boolean estProprietaire(Propriete case) {
+    public boolean estProprietaire(Propriete caseCible) {
         System.out.println("estProprietaire Perso : return false par défaut");
         return false;
     }

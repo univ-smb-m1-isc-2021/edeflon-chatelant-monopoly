@@ -9,7 +9,7 @@ public class Monopoly {
     public Plateau plateau;
 
     // Constructeur
-    public Monopoly(){
+    public Monopoly() {
         System.out.println("Constructeur Monop");
     }
 
@@ -28,5 +28,10 @@ public class Monopoly {
 
     public void creerJoueur(int nbj) {
         System.out.println("creerJoueur");
+    }
+
+    public static void main() {
+        System.out.println("Hello world");
+//        Monopoly jeu;
     }
 }

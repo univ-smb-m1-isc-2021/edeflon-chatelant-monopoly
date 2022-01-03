@@ -7,7 +7,9 @@ public class Quartier {
 
     // Methodes
     public boolean verifQuartierComplet(Personnage personne) {
+        return true;
     }
     public void addMaison() {
+        System.out.println("addMaison");
     }
 }

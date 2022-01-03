@@ -1,7 +1,7 @@
 public abstract class Propriete extends Case {
     // Attributs
-    public Personnage;
+    public Personnage proprietaire;
 
     // Methodes
-    public abstract void calculLoyer();
+    public abstract int calculLoyer();
 }
