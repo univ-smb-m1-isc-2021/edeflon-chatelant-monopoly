@@ -4,13 +4,15 @@ import java.util.List;
 
 public class Monopoly {
     // Attributs
-    public LesDes lesDés;
+    public LesDes lesDes;
     public List<Personnage> joueurs = new ArrayList<Personnage>();
     public Plateau plateau;
 
     // Constructeur
     public Monopoly() {
-        System.out.println("Constructeur Monop");
+        this.lesDes = new LesDes();
+        this.plateau = new Plateau();
+        System.out.println("Construction Monopoly");
     }
 
     // Methodes
@@ -30,8 +32,7 @@ public class Monopoly {
         System.out.println("creerJoueur");
     }
 
-    public static void main() {
-        System.out.println("Hello world");
-//        Monopoly jeu;
+    public static void main(String[] args) {
+        Monopoly jeu = new Monopoly();
     }
 }
