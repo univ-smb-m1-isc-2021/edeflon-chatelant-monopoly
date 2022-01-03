@@ -1,4 +1,5 @@
 public abstract class Case {
+    String nom;
     public Case caseSuivante;
 
     public Case avancer(int nbCases) {
@@ -9,4 +10,5 @@ public abstract class Case {
     public void joueurArrive(Personnage perso) {
     }
 
+    public abstract void setSuivant(Case caseCible);
 }

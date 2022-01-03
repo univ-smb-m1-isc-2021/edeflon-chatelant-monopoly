@@ -1,7 +1,6 @@
-public class Prison extends Case {
-
-    public Prison() {
-        this.nom = "Prison";
+public class CaseChance extends Case {
+    public CaseChance() {
+        this.nom = "Case Chance";
     }
 
     @Override

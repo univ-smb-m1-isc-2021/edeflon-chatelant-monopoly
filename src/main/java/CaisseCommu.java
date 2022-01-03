@@ -1,7 +1,7 @@
-public class Prison extends Case {
+public class CaisseCommu extends Case {
 
-    public Prison() {
-        this.nom = "Prison";
+    public CaisseCommu() {
+        this.nom = "Caisse Communauté";
     }
 
     @Override

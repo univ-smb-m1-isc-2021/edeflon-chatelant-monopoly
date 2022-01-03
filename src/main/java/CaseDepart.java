@@ -1,7 +1,7 @@
-public class Prison extends Case {
+public class CaseDepart extends Case{
 
-    public Prison() {
-        this.nom = "Prison";
+    public CaseDepart(){
+        this.nom = "Case Départ";
     }
 
     @Override
@@ -9,13 +9,14 @@ public class Prison extends Case {
         return super.avancer(nbCases);
     }
 
+    //TODO
     @Override
     public void joueurArrive(Personnage perso) {
         super.joueurArrive(perso);
     }
 
     @Override
-    public void setSuivant(Case caseCible) {
+    public void setSuivant(Case caseCible){
         this.caseSuivante = caseCible;
     }
 }

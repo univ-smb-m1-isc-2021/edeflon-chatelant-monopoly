@@ -1,7 +1,7 @@
-public class Prison extends Case {
+public class ParcGratuit extends Case {
 
-    public Prison() {
-        this.nom = "Prison";
+    public ParcGratuit() {
+        this.nom = "Parc Gratuit";
     }
 
     @Override
