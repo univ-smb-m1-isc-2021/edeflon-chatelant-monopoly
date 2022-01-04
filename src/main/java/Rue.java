@@ -28,8 +28,6 @@ public class Rue extends Propriete {
     }
 
     // Methodes
-
-    //TODO
     public boolean verifQuartier() {
         return quartier.verifQuartierComplet();
     }
@@ -82,19 +80,32 @@ public class Rue extends Propriete {
         return proprietaire;
     }
 
+    public Quartier getQuartier(){
+        return quartier;
+    }
+
     @Override
     public int calculLoyer() {
         if (nbMaisons == 0) {
+            if(verifQuartier()){
+                return loyer * 2;
+            }
+//            System.out.println("--- 0M");
             return loyer;
         } else if (nbMaisons == 1) {
+//            System.out.println("--- 1M");
             return loyer1M;
         } else if (nbMaisons == 2) {
+//            System.out.println("--- 2M");
             return loyer2M;
         } else if (nbMaisons == 3) {
+//            System.out.println("--- 3M");
             return loyer3M;
         } else if (nbMaisons == 4) {
+//            System.out.println("--- 4M");
             return loyer4M;
         } else {
+//            System.out.println("--- HOTEL");
             return loyerH;
         }
     }

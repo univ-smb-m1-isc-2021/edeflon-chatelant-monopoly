@@ -14,9 +14,9 @@ public class RueLibre extends EtatRue {
                 // Le joueur est débité du solde
                 personne.debiterSolde(rue.getPrixAchat());
                 // L'etat de la rue passe de Libre à occupé
-                rue.setEtat(new RueOccupe(rue));
                 rue.setProprietaire(personne);
                 personne.addPropriete(rue);
+                rue.setEtat(new RueOccupe(rue));
                 // Si il possède maintenant toutes les rues du quartier
                 if (rue.verifQuartier()) {
                     rue.setQuartierConstructible();

@@ -1,6 +1,6 @@
-public class CaseDepart extends Case{
+public class CaseDepart extends Case {
 
-    public CaseDepart(){
+    public CaseDepart() {
         this.nom = "Case Départ";
     }
 
@@ -10,10 +10,9 @@ public class CaseDepart extends Case{
         return super.avancer(p, nbCases);
     }
 
-    //TODO a vérifier si laisser
     @Override
     public void joueurArrive(Personnage perso) {
-        System.out.println(perso.nom + "sur la case " + this.nom + ".");
+        System.out.println(perso.nom + " sur la case " + this.nom + ".");
         perso.créditerSolde(200);
     }
 }

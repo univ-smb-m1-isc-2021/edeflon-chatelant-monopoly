@@ -12,12 +12,11 @@ public class Quartier {
     }
 
     // Methodes
-    //TODO verifQuartierComplet a tester
     public boolean verifQuartierComplet() {
         Personnage p = rue.get(0).getProprietaire();
         // Return false si le quartier n'est pas possédé par la même personne
         for (int i = 1; i < rue.size(); i++) {
-            if(rue.get(i).getProprietaire() == null){
+            if (rue.get(i).getProprietaire() == null) {
                 return false;
             }
             if (!rue.get(i).getProprietaire().equals(p)) {
@@ -34,13 +33,10 @@ public class Quartier {
         }
     }
 
-    //TODO
-    // Construction des maisons
     public void addMaison() {
         for (int i = 0; i < rue.size(); i++) {
             rue.get(i).incrNbMaisons();
         }
-        System.out.println("addMaison");
     }
 
     public int getPrixMaison() {

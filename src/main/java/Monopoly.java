@@ -8,11 +8,13 @@ public class Monopoly {
     private List<Personnage> joueurs = new ArrayList<Personnage>();
     private Plateau plateau;
     private Personnage joueurCourant;
+    private boolean finJeu;
 
     // Constructeur
     public Monopoly() {
         this.lesDes = new LesDes();
         this.plateau = new Plateau();
+        this.finJeu = false;
         lancerPartie();
     }
 
@@ -39,7 +41,10 @@ public class Monopoly {
         System.out.println("\n");
         setJoueurCourant();
 
-        joueurCourant.aToiDeJouer(lesDes);
+        while (!finJeu) {
+            joueurCourant.aToiDeJouer(lesDes);
+            setJoueurSuivant();
+        }
     }
 
     // Ne sert pas
@@ -55,6 +60,13 @@ public class Monopoly {
     //Ne sert finalemement pas
     public void creerJoueur(int nbj) {
         System.out.println("creerJoueur");
+    }
+
+    public void setJoueurSuivant() {
+        int ind = joueurs.indexOf(joueurCourant);
+        joueurCourant = joueurs.get(((ind + 1) % joueurs.size()));
+//        System.out.println("Indice trouve : " + ind);
+//        System.out.println("Modulo trouve : " + (((ind + 1) % joueurs.size()) ));
     }
 
     // ----- Main ----- //

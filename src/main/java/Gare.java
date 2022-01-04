@@ -11,7 +11,15 @@ public class Gare extends Propriete {
 
     public int calculLoyer() {
         int nbGaresPossedees = this.memeProprietaire();
-        return 50 * nbGaresPossedees;
+        if (nbGaresPossedees == 1) {
+            return 25;
+        } else if (nbGaresPossedees == 2) {
+            return 50;
+        } else if (nbGaresPossedees == 3) {
+            return 100;
+        } else {
+            return 200;
+        }
     }
 
     public void setGares(List<Gare> Lgares) {
@@ -32,9 +40,24 @@ public class Gare extends Propriete {
         proprietaire = p;
     }
 
-    // TODO ajouter les gares à la liste
     @Override
     public void joueurArrive(Personnage perso) {
-        System.out.println(perso.nom + "sur la case " + this.nom + ".");
+        // Si le terrain n'est pas acheté
+        if (proprietaire == null) {
+            // Si le joueur a assez d'argent
+            if (perso.soldeSuffisant(prixAchat)) {
+                // Proposer achat, si le joueur achete
+                if (perso.proposerAchat(prixAchat)) {
+                    proprietaire = perso;
+                    perso.addPropriete(this);
+                }
+            }
+            // Sinon si le perso n'est pas le propriétaire
+        } else if (!proprietaire.equals(perso)) {
+            int loyer = calculLoyer();
+            perso.debiterSolde(loyer);
+            proprietaire.créditerSolde(loyer);
+        }
+        // Sinon on ne fait rien
     }
 }

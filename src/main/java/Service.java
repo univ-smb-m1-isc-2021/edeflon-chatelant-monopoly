@@ -8,6 +8,7 @@ public class Service extends Propriete {
     public Service(String nom, int prix) {
         this.nom = nom;
         this.prix = prix;
+        this.lesDes = new LesDes();
     }
 
     // Prix de base * montant dés * 4 (si un seul service)
@@ -19,12 +20,11 @@ public class Service extends Propriete {
         if (this.proprietaire.equals(otherService.proprietaire)) {
             multiplicateur = 10;
         }
-        return (this.prix * resDes * multiplicateur);
+        return (resDes * multiplicateur);
     }
 
     @Override
     public void joueurArrive(Personnage perso) {
-        System.out.println(perso.nom + " sur la case " + this.nom + ".");
         // Si le terrain n'est pas acheté
         if(proprietaire == null){
             // Si le joueur a assez d'argent
@@ -35,12 +35,15 @@ public class Service extends Propriete {
                     perso.addPropriete(this);
                 }
             }
-        } else if (proprietaire != perso) {
+            // Sinon si le perso n'est pas le propriétaire
+        } else if (!proprietaire.equals(perso)) {
             this.resDes = perso.lancerDes(lesDes);
+            System.out.println(perso.nom + " lance les dés, il obtient : " + resDes);
             int loyer = calculLoyer();
             perso.debiterSolde(loyer);
             proprietaire.créditerSolde(loyer);
         }
+        // Sinon on ne fait rien
     }
 
     @Override

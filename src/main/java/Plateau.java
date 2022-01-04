@@ -32,7 +32,7 @@ public class Plateau {
         Gare montparnasse = new Gare("Gare Montparnasse");
         impots.setSuivant(montparnasse);
 
-        Rue bleuClair1 = new Rue("Rue de Vaugirad", 100, 6, 30, 90, 270, 400, 550);
+        Rue bleuClair1 = new Rue("Rue de Vaugirard", 100, 6, 30, 90, 270, 400, 550);
         montparnasse.setSuivant(bleuClair1);
 
         CaseChance chance1 = new CaseChance();

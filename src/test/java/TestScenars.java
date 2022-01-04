@@ -66,6 +66,7 @@ public class TestScenars {
     public static void incr12() {
         System.out.println("\n~ Incrément 1.2\n");
         int resDes = 6;
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
         System.out.println(joueurCourant.nom + " : Lancement des dés : " + resDes);
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 6));
         joueurCourant.position.joueurArrive(joueurCourant);
@@ -77,58 +78,59 @@ public class TestScenars {
         // INCR2.1
         System.out.println("\n~ Incrément 2.1\n");
         joueurCourant = joueurs.get(1);
-        System.out.println("Tour de " + joueurCourant.nom);
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 2));
         joueurCourant.position.joueurArrive(joueurCourant);
-        // LUC : 2 (Rue de la paix) : -400 (750)
-        // TODO : /!\ n'a pas les moyens d'acheter une maison)
     }
 
     public static void incr22() {
         System.out.println("\n~ Incrément 2.2\n");
         joueurCourant = joueurs.get(2);
-        System.out.println("Tour de " + joueurCourant.nom);
-        joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 27));
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
+        joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 11));
         joueurCourant.position.joueurArrive(joueurCourant);
     }
 
     public static void incr23() {
         System.out.println("\n~ Incrément 2.3\n");
         joueurCourant = joueurs.get(0);
-        System.out.println("Tour de " + joueurCourant.nom);
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 23));
-        // TODO
         joueurCourant.position.joueurArrive(joueurCourant);
     }
 
     public static void incr24() {
-        System.out.println("~ Incrément 2.4\n");
+        System.out.println("\n~ Incrément 2.4\n");
         joueurCourant = joueurs.get(1);
-        System.out.println("Tour de " + joueurCourant.nom);
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 6));
-        // TODO
+        System.out.println(joueurCourant.nom + " passe par la case Départ, il gagne 200€, nouveau solde : " + joueurCourant.solde + "€");
+        joueurCourant.position.joueurArrive(joueurCourant);
+        System.out.println("--- quelques tours plus tard ---");
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
+        joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 34));
         joueurCourant.position.joueurArrive(joueurCourant);
     }
 
     public static void incr25() {
-        System.out.println("~ Incrément 2.5\n");
+        System.out.println("\n~ Incrément 2.5\n");
         joueurCourant = joueurs.get(2);
-        System.out.println("Tour de " + joueurCourant.nom);
+        System.out.println("Tour de : " + joueurCourant.nom + ", solde actuel : " + joueurCourant.solde + "€");
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 40));
         joueurCourant.position.joueurArrive(joueurCourant);
     }
 
-    public static void voleRue(Personnage joueur, Rue prop){
+    public static void voleRue(Personnage joueur, Rue prop) {
         joueur.addPropriete(prop);  // Ajout dans la liste des prop du joueur
         prop.setProprietaire(joueur); // Ajout du joueur en tant que proprietaire sur la case
         prop.setEtat(new RueOccupe(prop)); // Met l'etat de la rue a occupe
         // Passe les rues du quartier a constructibles si toutes possedes par le meme proprio
-        if(prop.verifQuartier()){
+        if (prop.verifQuartier()) {
             prop.setQuartierConstructible();
         }
     }
 
-    public static void voleGare(Personnage joueur, Gare gare){
+    public static void voleGare(Personnage joueur, Gare gare) {
         joueur.addPropriete(gare);
         gare.setProprietaire(joueur);
     }
@@ -168,17 +170,19 @@ public class TestScenars {
         voleRue(joueurCourant, (Rue) joueurCourant.position);
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 3)); // Avenue des champs Elysées
         voleRue(joueurCourant, (Rue) joueurCourant.position);
+        joueurCourant.debiterSolde(3710);
 
         joueurCourant = joueurs.get(2);
         joueurCourant.créditerSolde(3000);
-        joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 12)); // eaux
+        joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 28)); // eaux
         voleService(joueurCourant, (Service) joueurCourant.position);
+        joueurCourant.debiterSolde(4000);
 
         System.out.println("\n--- la partie progresse ---");
         System.out.println("Entre temps, les joueurs ont acheté les cases suivantes : ");
-        System.out.println("- Paul : Gare Montparnasse, Gare de Lyon, Gare du Nord");
-        System.out.println("- Luc : Avenue des champs Elysees, les 3 cases du quartier vert");
-        System.out.println("- Théo : Service des eaux");
+        System.out.println("- " + joueurs.get(0).nom + ": Gare Montparnasse, Gare de Lyon, Gare du Nord");
+        System.out.println("- " + joueurs.get(1).nom + ": Avenue des champs Elysees, les 3 cases du quartier vert");
+        System.out.println("- " + joueurs.get(2).nom + " : Service des eaux");
         System.out.println("--- c'est au tour de Luc de jouer ---\n");
 
         // INCR2.1

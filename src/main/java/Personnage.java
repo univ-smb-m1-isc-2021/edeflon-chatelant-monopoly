@@ -21,7 +21,7 @@ public class Personnage {
     }
 
     public void aToiDeJouer(LesDes des) {
-        System.out.println(nom + " : A moi de jouer");
+        System.out.println("\nTour de : " +nom + ", solde actuel : " + solde + "€");
         des.lancerDes();
         int resDes = des.getTotalDes();
         System.out.println(nom + " : Lancement des dés : " + resDes);
@@ -31,9 +31,6 @@ public class Personnage {
 
         position.joueurArrive(this);
 
-//        Scanner sc = new Scanner(System.in);
-//        afficheChoix();
-//        int choix = Integer.parseInt(sc.nextLine());
 
     }
 
@@ -64,7 +61,8 @@ public class Personnage {
     public boolean debiterSolde(int montant) {
         if ((solde - montant) >= 0) {
             solde -= montant;
-            System.out.println(nom + " a été débité de " + montant + "$");
+            System.out.println(nom + " a été débité de " + montant + "€");
+            System.out.println(nom + " nouveau solde : " + solde + "€");
             return true;
         }
         return false;
@@ -90,7 +88,7 @@ public class Personnage {
     }
 
     public boolean demandeConstruction(int prix) {
-        System.out.println("Souhaitez vous achetez des maisons pour le prix de : " + prix + "$");
+        System.out.println("Souhaitez vous achetez des maisons pour le prix de : " + prix + "€");
         System.out.println("1 - Oui");
         System.out.println("2 - Non");
         Scanner sc = new Scanner(System.in);

@@ -10,12 +10,13 @@ public class RueConstructible extends EtatRue {
     public void joueurArrive(Personnage personne) {
         // TODO CHECK HOTEL
         // Si la personne est le propriétaire et qu'il à l'argent nécéssaire à la construction
-        if (personne.equals(rue.getProprietaire()) && personne.soldeSuffisant(rue.prixConstruction())){
-            if(personne.demandeConstruction(rue.prixConstruction())){
-                addMaison();
+        if (personne.equals(rue.getProprietaire()) && personne.soldeSuffisant(rue.prixConstruction())) {
+            if (personne.demandeConstruction(rue.prixConstruction())) {
+                rue.getQuartier().addMaison();
             }
-        }else{
+        } else if (!personne.equals(rue.getProprietaire())) {
             personne.debiterSolde(rue.calculLoyer());
         }
     }
+
 }
