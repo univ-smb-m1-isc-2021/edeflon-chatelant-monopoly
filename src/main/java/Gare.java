@@ -42,10 +42,10 @@ public class Gare extends Propriete {
 
     @Override
     public void joueurArrive(Personnage perso) {
-        // Si le terrain n'est pas acheté et le joueur a assez d'argent
-        if (proprietaire == null && perso.soldeSuffisant(prixAchat)) {
-            // Proposer achat, si le joueur achete
-            if (perso.proposerAchat(prixAchat)) {
+        // Si le terrain n'est pas acheté
+        if (proprietaire == null) {
+            // Si le joueur a assez d'argent et le joueur souhaite acheter
+            if (perso.soldeSuffisant(prixAchat) && perso.proposerAchat(prixAchat)) {
                 proprietaire = perso;
                 perso.addPropriete(this);
             }
