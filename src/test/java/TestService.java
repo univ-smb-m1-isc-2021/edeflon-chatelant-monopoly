@@ -4,13 +4,16 @@ public class TestService {
 
     @Test
     public void test() {
-        Plateau p = new Plateau();
+        CaseDepart caseDepart = new CaseDepart();
         Service service = new Service("Service", 100);
+        Service other = new Service("Autre", 100);
+        service.setOtherService(other);
+        other.setOtherService(service);
 
-        Personnage p1 = new Personnage("Remi", p.caseDepart);
-        Personnage p2 = new Personnage("Lucy", p.caseDepart);
+        Personnage p1 = new Personnage("Remi", caseDepart);
+        Personnage p2 = new Personnage("Lucy", caseDepart);
 
-        // Service, mode "libre"
+        // Service, mode "RueLibre"
         assert(service.proprietaire == null);
 
         // Service acheté
@@ -18,22 +21,23 @@ public class TestService {
         p1.addPropriete(service);
         service.setProprietaire(p1);
 
-        assert(service.proprietaire == p1);
+        assert(service.proprietaire.equals(p1));
+        assert(p1.mesProprietes.contains(service));
 
         // Service acheté par un autre, loyer à payer
         int soldeP2depart = p2.solde;
         p2.setPosition(service);
         service.joueurArrive(p2);
+        int soldeP2arrive = p2.solde;
 
-        assert(soldeP2depart < p2.solde);
+        assert(soldeP2depart > soldeP2arrive);
 
         // Vérifie le montant du loyer (1 service possédé)
-        int loyer = p2.solde - soldeP2depart;
+        int loyer = soldeP2depart - soldeP2arrive;
 
-        assert( 2 <= (loyer/4) && (loyer/4 <= 12));
+        assert( (2 <= (loyer/4)) && ((loyer/4) <= 12));
 
-        // Vérifie le montant du loyre (2 services possédés)
-        Service other = new Service("Autre", 100);
+        // Vérifie le montant du loyer (2 services possédés)
         p1.setPosition(other);
         p1.addPropriete(other);
         other.setProprietaire(p1);
@@ -42,7 +46,7 @@ public class TestService {
         p2.setPosition(other);
         other.joueurArrive(p2);
 
-        loyer = p2.solde - soldeP2depart;
+        loyer = soldeP2depart - p2.solde;
 
         assert( (2 <= (loyer/10)) && ((loyer/10) <= 12) );
     }
