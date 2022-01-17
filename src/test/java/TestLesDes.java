@@ -1,6 +1,10 @@
 import org.junit.jupiter.api.Test;
 
 public class TestLesDes {
+    public TestLesDes(){
+        test();
+    }
+    
     @Test
     public void test() {
         LesDes d = new LesDes();
