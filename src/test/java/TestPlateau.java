@@ -10,10 +10,10 @@ public class TestPlateau {
         // Test nb cases
         int nbCases = 0;
         Case cc = p.caseDepart.caseSuivante;
-        while(cc != p.caseDepart){
+        while (cc != p.caseDepart) {
             cc = cc.caseSuivante;
             nbCases++;
         }
-        assert ( nbCases == 39);
+        assert (nbCases == 39);
     }
 }
