@@ -1,11 +1,8 @@
 public class Rue extends Propriete {
     // Arguments
-//    private Personnage proprietaire;
     private EtatRue etatRue;
-    private int prixMaison;
     private Quartier quartier;
     private int nbMaisons;
-//    private final int prixAchat;
     private final int loyer;
     private final int loyer1M;
     private final int loyer2M;
@@ -90,22 +87,16 @@ public class Rue extends Propriete {
             if(verifQuartier()){
                 return loyer * 2;
             }
-//            System.out.println("--- 0M");
             return loyer;
         } else if (nbMaisons == 1) {
-//            System.out.println("--- 1M");
             return loyer1M;
         } else if (nbMaisons == 2) {
-//            System.out.println("--- 2M");
             return loyer2M;
         } else if (nbMaisons == 3) {
-//            System.out.println("--- 3M");
             return loyer3M;
         } else if (nbMaisons == 4) {
-//            System.out.println("--- 4M");
             return loyer4M;
         } else {
-//            System.out.println("--- HOTEL");
             return loyerH;
         }
     }

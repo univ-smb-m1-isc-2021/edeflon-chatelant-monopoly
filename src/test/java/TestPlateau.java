@@ -6,7 +6,7 @@ public class TestPlateau {
     public void test() {
         Plateau p = new Plateau();
         // Test case départ
-        Assertions.assertTrue(p.getCaseDepart() != null);
+        Assertions.assertNotNull(p.getCaseDepart());
 
         // Test nb cases
         int nbCases = 0;
@@ -15,6 +15,6 @@ public class TestPlateau {
             cc = cc.caseSuivante;
             nbCases++;
         }
-        Assertions.assertTrue(nbCases == 39);
+        Assertions.assertEquals(nbCases, 39);
     }
 }

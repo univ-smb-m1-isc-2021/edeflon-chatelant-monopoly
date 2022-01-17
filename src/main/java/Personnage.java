@@ -8,7 +8,6 @@ public class Personnage {
     public int solde;
     public Case position;
     public List<Propriete> mesProprietes = new ArrayList<Propriete>();
-    private int lastDes;
 
     public Personnage(String nom, Case position) {
         this.nom = nom;

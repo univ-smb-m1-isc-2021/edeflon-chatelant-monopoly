@@ -15,14 +15,14 @@ public class TestService {
         Personnage p2 = new Personnage("Lucy", caseDepart);
 
         // Service, mode "RueLibre"
-        Assertions.assertTrue(service.proprietaire == null);
+        Assertions.assertNull(service.proprietaire);
 
         // Service acheté
         p1.setPosition(service);
         p1.addPropriete(service);
         service.setProprietaire(p1);
 
-        Assertions.assertTrue(service.proprietaire.equals(p1));
+        Assertions.assertEquals(p1, service.proprietaire);
         Assertions.assertTrue(p1.mesProprietes.contains(service));
 
         // Service acheté par un autre, loyer à payer

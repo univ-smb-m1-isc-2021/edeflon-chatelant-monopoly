@@ -45,7 +45,7 @@ public class TestGare {
         int soldeP2arrive = p2.solde;
 
         Assertions.assertTrue(soldeP2depart > soldeP2arrive);
-        Assertions.assertEquals(soldeP2depart - soldeP2arrive, 25);
+        Assertions.assertEquals(25,soldeP2depart - soldeP2arrive);
 
         // Loyer 2 gares
         p1.setPosition(g2);
@@ -58,7 +58,7 @@ public class TestGare {
         soldeP2arrive = p2.solde;
 
         Assertions.assertTrue(soldeP2depart > soldeP2arrive);
-        Assertions.assertEquals(soldeP2depart - soldeP2arrive, 50);
+        Assertions.assertEquals(50, soldeP2depart - soldeP2arrive);
 
         // Loyer 3 gares
         p1.setPosition(g3);
@@ -71,7 +71,7 @@ public class TestGare {
         soldeP2arrive = p2.solde;
 
         Assertions.assertTrue(soldeP2depart > soldeP2arrive);
-        Assertions.assertEquals(soldeP2depart - soldeP2arrive, 100);
+        Assertions.assertEquals(100,soldeP2depart - soldeP2arrive);
 
         // Loyer 4 gares
         p1.setPosition(g4);
@@ -84,7 +84,7 @@ public class TestGare {
         soldeP2arrive = p2.solde;
 
         Assertions.assertTrue(soldeP2depart > soldeP2arrive);
-        Assertions.assertEquals(soldeP2depart - soldeP2arrive, 200);
+        Assertions.assertEquals(200,soldeP2depart - soldeP2arrive);
 
     }
 }
