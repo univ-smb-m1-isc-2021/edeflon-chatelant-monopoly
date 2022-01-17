@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestTaxes {
     @Test
-    public void test() {
+    void test() {
         // Initialisation
         Taxes cTest = new Taxes("Taxes test", 100);
         Personnage p = new Personnage("JoueurTest", null);

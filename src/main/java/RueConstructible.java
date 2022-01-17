@@ -8,7 +8,6 @@ public class RueConstructible extends EtatRue {
 
     @Override
     public void joueurArrive(Personnage personne) {
-        // TODO CHECK HOTEL
         // Si la personne est le propriétaire et qu'il à l'argent nécéssaire à la construction
         if (personne.equals(rue.getProprietaire()) && personne.soldeSuffisant(rue.prixConstruction())) {
             if (personne.demandeConstruction(rue.prixConstruction())) {

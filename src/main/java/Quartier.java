@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Quartier {
     // Attributs
-    public List<Rue> rue = new ArrayList<Rue>();
+    public List<Rue> rue = new ArrayList<>();
     private int prixMaison;
 
     public Quartier(List<Rue> rue, int prixMaison) {

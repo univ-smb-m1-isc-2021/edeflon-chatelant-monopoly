@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Monopoly {
     // Attributs
     private LesDes lesDes;
-    private List<Personnage> joueurs = new ArrayList<Personnage>();
+    private List<Personnage> joueurs = new ArrayList<>();
     private Plateau plateau;
     private Personnage joueurCourant;
     private boolean finJeu;

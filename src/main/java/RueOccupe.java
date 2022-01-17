@@ -11,7 +11,7 @@ public class RueOccupe extends EtatRue {
         // Si la personne n'est pas propriétaire
         if (!personne.equals(rue.getProprietaire())){
             personne.debiterSolde(rue.calculLoyer());
-            rue.getProprietaire().créditerSolde(rue.calculLoyer());
+            rue.getProprietaire().crediterSolde(rue.calculLoyer());
         }
     }
 }

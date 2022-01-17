@@ -137,94 +137,94 @@ public class Plateau {
 
 
         // Ajout des propriétés sous liste pour les quartiers
-        List<Rue> Lmarron = new ArrayList<>();
-        Lmarron.add(marron1);
-        Lmarron.add(marron2);
+        List<Rue> lMarron = new ArrayList<>();
+        lMarron.add(marron1);
+        lMarron.add(marron2);
 
-        List<Rue> LbleuC = new ArrayList<>();
-        LbleuC.add(bleuClair1);
-        LbleuC.add(bleuClair2);
-        LbleuC.add(bleuClair3);
+        List<Rue> lBleuC = new ArrayList<>();
+        lBleuC.add(bleuClair1);
+        lBleuC.add(bleuClair2);
+        lBleuC.add(bleuClair3);
 
-        List<Rue> Lrose = new ArrayList<>();
-        Lrose.add(rose1);
-        Lrose.add(rose2);
-        Lrose.add(rose3);
+        List<Rue> lRose = new ArrayList<>();
+        lRose.add(rose1);
+        lRose.add(rose2);
+        lRose.add(rose3);
 
-        List<Rue> Lorange = new ArrayList<>();
-        Lorange.add(orange1);
-        Lorange.add(orange2);
-        Lorange.add(orange3);
+        List<Rue> lOrange = new ArrayList<>();
+        lOrange.add(orange1);
+        lOrange.add(orange2);
+        lOrange.add(orange3);
 
-        List<Rue> Lrouge = new ArrayList<>();
-        Lrouge.add(rouge1);
-        Lrouge.add(rouge2);
-        Lrouge.add(rouge3);
+        List<Rue> lRouge = new ArrayList<>();
+        lRouge.add(rouge1);
+        lRouge.add(rouge2);
+        lRouge.add(rouge3);
 
-        List<Rue> Ljaune = new ArrayList<>();
-        Ljaune.add(jaune1);
-        Ljaune.add(jaune2);
-        Ljaune.add(jaune3);
+        List<Rue> lJaune = new ArrayList<>();
+        lJaune.add(jaune1);
+        lJaune.add(jaune2);
+        lJaune.add(jaune3);
 
-        List<Rue> Lvert = new ArrayList<>();
-        Lvert.add(vert1);
-        Lvert.add(vert2);
-        Lvert.add(vert3);
+        List<Rue> lVert = new ArrayList<>();
+        lVert.add(vert1);
+        lVert.add(vert2);
+        lVert.add(vert3);
 
-        List<Rue> LbleuF = new ArrayList<>();
-        LbleuF.add(bleuFonce1);
-        LbleuF.add(bleuFonce2);
+        List<Rue> lBleuF = new ArrayList<>();
+        lBleuF.add(bleuFonce1);
+        lBleuF.add(bleuFonce2);
 
         // Les quartiers
-        Quartier marron = new Quartier(Lmarron, 50);
+        Quartier marron = new Quartier(lMarron, 50);
         marron1.setQuartier(marron);
         marron2.setQuartier(marron);
 
-        Quartier bleuClair = new Quartier(LbleuC, 50);
+        Quartier bleuClair = new Quartier(lBleuC, 50);
         bleuClair1.setQuartier(bleuClair);
         bleuClair2.setQuartier(bleuClair);
         bleuClair3.setQuartier(bleuClair);
 
-        Quartier rose = new Quartier(Lrose, 100);
+        Quartier rose = new Quartier(lRose, 100);
         rose1.setQuartier(rose);
         rose2.setQuartier(rose);
         rose3.setQuartier(rose);
 
-        Quartier orange = new Quartier(Lorange, 100);
+        Quartier orange = new Quartier(lOrange, 100);
         orange1.setQuartier(orange);
         orange2.setQuartier(orange);
         orange3.setQuartier(orange);
 
-        Quartier rouge = new Quartier(Lrouge, 150);
+        Quartier rouge = new Quartier(lRouge, 150);
         rouge1.setQuartier(rouge);
         rouge2.setQuartier(rouge);
         rouge3.setQuartier(rouge);
 
-        Quartier jaune = new Quartier(Ljaune, 150);
+        Quartier jaune = new Quartier(lJaune, 150);
         jaune1.setQuartier(jaune);
         jaune2.setQuartier(jaune);
         jaune3.setQuartier(jaune);
 
-        Quartier vert = new Quartier(Lvert, 200);
+        Quartier vert = new Quartier(lVert, 200);
         vert1.setQuartier(vert);
         vert2.setQuartier(vert);
         vert3.setQuartier(vert);
 
-        Quartier bleuFonce = new Quartier(LbleuF, 200);
+        Quartier bleuFonce = new Quartier(lBleuF, 200);
         bleuFonce1.setQuartier(bleuFonce);
         bleuFonce2.setQuartier(bleuFonce);
 
         // Permets aux gares de se connaître mutuellement
-        List<Gare> Lgares = new ArrayList<>();
-        Lgares.add(montparnasse);
-        Lgares.add(lyon);
-        Lgares.add(nord);
-        Lgares.add(saintLazare);
+        List<Gare> lGares = new ArrayList<>();
+        lGares.add(montparnasse);
+        lGares.add(lyon);
+        lGares.add(nord);
+        lGares.add(saintLazare);
 
-        montparnasse.setGares(Lgares);
-        lyon.setGares(Lgares);
-        nord.setGares(Lgares);
-        saintLazare.setGares(Lgares);
+        montparnasse.setGares(lGares);
+        lyon.setGares(lGares);
+        nord.setGares(lGares);
+        saintLazare.setGares(lGares);
 
         // Permet aux services de se connaître
         elec.setOtherService(eaux);

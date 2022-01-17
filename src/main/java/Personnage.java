@@ -7,7 +7,7 @@ public class Personnage {
     public String nom;
     public int solde;
     public Case position;
-    public List<Propriete> mesProprietes = new ArrayList<Propriete>();
+    public List<Propriete> mesProprietes = new ArrayList<>();
 
     public Personnage(String nom, Case position) {
         this.nom = nom;
@@ -61,7 +61,7 @@ public class Personnage {
         return false;
     }
 
-    public boolean créditerSolde(int montantLoyer) {
+    public boolean crediterSolde(int montantLoyer) {
         solde += montantLoyer;
         return true;
     }

@@ -22,8 +22,8 @@ public class Gare extends Propriete {
         }
     }
 
-    public void setGares(List<Gare> Lgares) {
-        this.gares = Lgares;
+    public void setGares(List<Gare> lGares) {
+        this.gares = lGares;
     }
 
     public int memeProprietaire() {
@@ -53,7 +53,7 @@ public class Gare extends Propriete {
         } else if (!proprietaire.equals(perso)) {
             int loyer = calculLoyer();
             perso.debiterSolde(loyer);
-            proprietaire.créditerSolde(loyer);
+            proprietaire.crediterSolde(loyer);
         }
         // Sinon on ne fait rien
     }

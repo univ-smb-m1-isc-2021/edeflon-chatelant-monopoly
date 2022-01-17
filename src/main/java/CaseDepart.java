@@ -6,13 +6,13 @@ public class CaseDepart extends Case {
 
     @Override
     public Case avancer(Personnage p, int nbCases) {
-        p.créditerSolde(200);
+        p.crediterSolde(200);
         return super.avancer(p, nbCases);
     }
 
     @Override
     public void joueurArrive(Personnage perso) {
         System.out.println(perso.nom + " sur la case " + this.nom + ".");
-        perso.créditerSolde(200);
+        perso.crediterSolde(200);
     }
 }

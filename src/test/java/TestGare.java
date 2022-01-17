@@ -7,7 +7,7 @@ import java.util.List;
 public class TestGare {
 
     @Test
-    public void test() {
+    void test() {
         Gare g1 = new Gare("1");
         Gare g2 = new Gare("2");
         Gare g3 = new Gare("3");

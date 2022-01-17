@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestCaseDepart {
     @Test
-    public void test() {
+    void test() {
         Case depart = new CaseDepart();
         Case c1 = new CaseChance();
         Case c2 = new CaisseCommu();
@@ -19,7 +19,7 @@ public class TestCaseDepart {
         p.setPosition(p.position.avancer(p, 2));
         int soldeFinal = p.solde;
 
-        Assertions.assertTrue((soldeFinal - soldeInitial) == 200);
+        Assertions.assertEquals((soldeFinal - soldeInitial), 200);
 
         // Le joueur gagne 400 en tombant sur la case départ
         soldeInitial = p.solde;
@@ -27,6 +27,6 @@ public class TestCaseDepart {
         p.setPosition(p.position.avancer(p, 1));
         soldeFinal = p.solde;
 
-        Assertions.assertTrue((soldeFinal - soldeInitial) == 400);
+        Assertions.assertEquals((soldeFinal - soldeInitial), 400);
     }
 }

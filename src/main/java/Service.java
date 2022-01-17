@@ -26,14 +26,11 @@ public class Service extends Propriete {
     @Override
     public void joueurArrive(Personnage perso) {
         // Si le terrain n'est pas acheté
-        if(proprietaire == null){
-            // Si le joueur a assez d'argent
-            if(perso.soldeSuffisant(prixAchat)){
-                // Proposer achat, si le joueur achete
-                if(perso.proposerAchat(prixAchat)){
-                    proprietaire = perso;
-                    perso.addPropriete(this);
-                }
+        if (proprietaire == null) {
+            // Si le joueur a assez d'argent et le joueur souhaite acheté
+            if (perso.soldeSuffisant(prixAchat) && perso.proposerAchat(prixAchat)) {
+                proprietaire = perso;
+                perso.addPropriete(this);
             }
             // Sinon si le perso n'est pas le propriétaire
         } else if (!proprietaire.equals(perso)) {
@@ -41,7 +38,7 @@ public class Service extends Propriete {
             System.out.println(perso.nom + " lance les dés, il obtient : " + resDes);
             int loyer = calculLoyer();
             perso.debiterSolde(loyer);
-            proprietaire.créditerSolde(loyer);
+            proprietaire.crediterSolde(loyer);
         }
         // Sinon on ne fait rien
     }

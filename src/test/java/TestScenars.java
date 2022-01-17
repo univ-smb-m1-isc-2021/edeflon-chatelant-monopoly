@@ -153,7 +153,7 @@ public class TestScenars {
 
         // INTERLUDE
         System.out.println("\nINTERLUDE");
-        joueurCourant.créditerSolde(3000);
+        joueurCourant.crediterSolde(3000);
 
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 9)); // Gare de Lyon
         voleGare(joueurCourant, (Gare) joueurCourant.position);
@@ -163,7 +163,7 @@ public class TestScenars {
         voleGare(joueurCourant, (Gare) joueurCourant.position);
 
         joueurCourant = joueurs.get(1);
-        joueurCourant.créditerSolde(3000);
+        joueurCourant.crediterSolde(3000);
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 31)); // Case verte 1
         voleRue(joueurCourant, (Rue) joueurCourant.position);
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 1)); // Case verte 2
@@ -175,7 +175,7 @@ public class TestScenars {
         joueurCourant.debiterSolde(3710);
 
         joueurCourant = joueurs.get(2);
-        joueurCourant.créditerSolde(3000);
+        joueurCourant.crediterSolde(3000);
         joueurCourant.setPosition(joueurCourant.position.avancer(joueurCourant, 28)); // eaux
         voleService(joueurCourant, (Service) joueurCourant.position);
         joueurCourant.debiterSolde(4000);

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class TestService {
 
     @Test
-    public void test() {
+    void test() {
         CaseDepart caseDepart = new CaseDepart();
         Service service = new Service("Service", 100);
         Service other = new Service("Autre", 100);
