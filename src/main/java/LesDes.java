@@ -1,3 +1,5 @@
+import java.security.SecureRandom;
+
 public class LesDes {
     private int val1;
     private int val2;
@@ -26,8 +28,10 @@ public class LesDes {
 
     // Methodes
     public void lancerDes() {
-        setVal1((int) (1 + (Math.random() * (7 - 1))));
-        setVal2((int) (1 + (Math.random() * (7 - 1))));
+        SecureRandom r = new SecureRandom();
+        setVal1( (1 + (r.nextInt(6))));
+        setVal2( (1 + (r.nextInt(6))));
+        System.out.println("Des 1 : " + val1 + "     Des 2 : " + val2);
     }
 
     public int getTotalDes() {
