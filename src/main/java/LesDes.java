@@ -29,16 +29,15 @@ public class LesDes {
     // Methodes
     public void lancerDes() {
         SecureRandom r = new SecureRandom();
-        setVal1( (1 + (r.nextInt(6))));
-        setVal2( (1 + (r.nextInt(6))));
-        System.out.println("Des 1 : " + val1 + "     Des 2 : " + val2);
+        setVal1((1 + (r.nextInt(6))));
+        setVal2((1 + (r.nextInt(6))));
     }
 
     public int getTotalDes() {
         return getVal1() + getVal2();
     }
 
-    public boolean estDouble(){
+    public boolean estDouble() {
         return getVal1() == getVal2();
     }
 }
