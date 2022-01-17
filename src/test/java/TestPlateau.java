@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestPlateau {
@@ -5,7 +6,7 @@ public class TestPlateau {
     public void test() {
         Plateau p = new Plateau();
         // Test case départ
-        assert (p.getCaseDepart() != null);
+        Assertions.assertTrue(p.getCaseDepart() != null);
 
         // Test nb cases
         int nbCases = 0;
@@ -14,6 +15,6 @@ public class TestPlateau {
             cc = cc.caseSuivante;
             nbCases++;
         }
-        assert (nbCases == 39);
+        Assertions.assertTrue(nbCases == 39);
     }
 }

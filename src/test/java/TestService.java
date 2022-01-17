@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestService {
@@ -14,15 +15,15 @@ public class TestService {
         Personnage p2 = new Personnage("Lucy", caseDepart);
 
         // Service, mode "RueLibre"
-        assert(service.proprietaire == null);
+        Assertions.assertTrue(service.proprietaire == null);
 
         // Service acheté
         p1.setPosition(service);
         p1.addPropriete(service);
         service.setProprietaire(p1);
 
-        assert(service.proprietaire.equals(p1));
-        assert(p1.mesProprietes.contains(service));
+        Assertions.assertTrue(service.proprietaire.equals(p1));
+        Assertions.assertTrue(p1.mesProprietes.contains(service));
 
         // Service acheté par un autre, loyer à payer
         int soldeP2depart = p2.solde;
@@ -30,12 +31,12 @@ public class TestService {
         service.joueurArrive(p2);
         int soldeP2arrive = p2.solde;
 
-        assert(soldeP2depart > soldeP2arrive);
+        Assertions.assertTrue(soldeP2depart > soldeP2arrive);
 
         // Vérifie le montant du loyer (1 service possédé)
         int loyer = soldeP2depart - soldeP2arrive;
 
-        assert( (2 <= (loyer/4)) && ((loyer/4) <= 12));
+        Assertions.assertTrue((2 <= (loyer / 4)) && ((loyer / 4) <= 12));
 
         // Vérifie le montant du loyer (2 services possédés)
         p1.setPosition(other);
@@ -48,6 +49,6 @@ public class TestService {
 
         loyer = soldeP2depart - p2.solde;
 
-        assert( (2 <= (loyer/10)) && ((loyer/10) <= 12) );
+        Assertions.assertTrue((2 <= (loyer / 10)) && ((loyer / 10) <= 12));
     }
 }

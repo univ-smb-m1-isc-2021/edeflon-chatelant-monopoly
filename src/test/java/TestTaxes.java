@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestTaxes {
@@ -13,6 +14,6 @@ public class TestTaxes {
         cTest.joueurArrive(p);
         int soldeArrive = p.solde;
 
-        assert (soldeArrive < soldeDepart);
+        Assertions.assertTrue(soldeArrive < soldeDepart);
     }
 }
