@@ -65,8 +65,6 @@ public class Monopoly {
     public void setJoueurSuivant() {
         int ind = joueurs.indexOf(joueurCourant);
         joueurCourant = joueurs.get(((ind + 1) % joueurs.size()));
-//        System.out.println("Indice trouve : " + ind);
-//        System.out.println("Modulo trouve : " + (((ind + 1) % joueurs.size()) ));
     }
 
     // ----- Main ----- //

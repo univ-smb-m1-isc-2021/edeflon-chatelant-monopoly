@@ -1,11 +1,11 @@
 public class Rue extends Propriete {
     // Arguments
-    private Personnage proprietaire;
+//    private Personnage proprietaire;
     private EtatRue etatRue;
     private int prixMaison;
     private Quartier quartier;
     private int nbMaisons;
-    private final int prixAchat;
+//    private final int prixAchat;
     private final int loyer;
     private final int loyer1M;
     private final int loyer2M;
