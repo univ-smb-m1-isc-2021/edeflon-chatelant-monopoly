@@ -8,7 +8,7 @@ public class RueLibre extends EtatRue {
     @Override
     public void joueurArrive(Personnage personne) {
         // On regarde si le solde du joueur est suffisant pour acheter et le joueur souhaite acheter le terrain
-        if (personne.soldeSuffisant(rue.getPrixAchat()) && personne.proposerAchat(rue.getPrixAchat())) {
+        if (personne.soldeSuffisant(rue.getPrixAchat()) && personne.proposerAchat()) {
             // Le joueur est débité du solde
             personne.debiterSolde(rue.getPrixAchat());
             // L'etat de la rue passe de Libre à occupé

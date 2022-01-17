@@ -1,13 +1,12 @@
 public class Service extends Propriete {
 
     private Service otherService;
-    private int prix;
     private LesDes lesDes;
     private int resDes;
 
     public Service(String nom, int prix) {
         this.nom = nom;
-        this.prix = prix;
+        this.prixAchat = prix;
         this.lesDes = new LesDes();
     }
 
@@ -28,7 +27,7 @@ public class Service extends Propriete {
         // Si le terrain n'est pas acheté
         if (proprietaire == null) {
             // Si le joueur a assez d'argent et le joueur souhaite acheté
-            if (perso.soldeSuffisant(prixAchat) && perso.proposerAchat(prixAchat)) {
+            if (perso.soldeSuffisant(prixAchat) && perso.proposerAchat()) {
                 proprietaire = perso;
                 perso.addPropriete(this);
             }

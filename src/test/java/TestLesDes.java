@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestLesDes {
+class TestLesDes {
     @Test
     void test() {
         LesDes d = new LesDes();

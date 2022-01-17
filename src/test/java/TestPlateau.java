@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestPlateau {
+class TestPlateau {
     @Test
     void test() {
         Plateau p = new Plateau();

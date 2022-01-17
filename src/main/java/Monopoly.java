@@ -58,7 +58,7 @@ public class Monopoly {
     }
 
     //Ne sert finalemement pas
-    public void creerJoueur(int nbj) {
+    public void creerJoueur() {
         System.out.println("creerJoueur");
     }
 
@@ -69,6 +69,6 @@ public class Monopoly {
 
     // ----- Main ----- //
     public static void main(String[] args) {
-        Monopoly jeu = new Monopoly();
+        new Monopoly();
     }
 }

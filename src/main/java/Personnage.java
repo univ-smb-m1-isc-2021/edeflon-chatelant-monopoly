@@ -33,7 +33,7 @@ public class Personnage {
 
     }
 
-    public boolean proposerAchat(float prix) {
+    public boolean proposerAchat() {
         System.out.println("Souhaitez vous acheter cette rue ? ");
         System.out.println("1 - Oui ");
         System.out.println("2 - Non ");
@@ -42,8 +42,8 @@ public class Personnage {
         return str.equals("1");
     }
 
-    public boolean payerLoyer(int montant) {
-        System.out.println("payerLoyer Perso : return false par défaut");
+    public boolean payerLoyer() {
+        System.err.println("payerLoyer Perso : return false par défaut");
         return false;
     }
 

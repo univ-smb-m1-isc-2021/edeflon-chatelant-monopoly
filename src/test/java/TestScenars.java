@@ -1,10 +1,8 @@
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TestScenars {
+class TestScenars {
 
     // Attributs
     private LesDes lesDes;
