@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -202,11 +203,5 @@ public class TestScenars {
         incr25();
 
         System.out.println("\n~~~ Fin du Test ~~~");
-    }
-
-    // Méthode test appelée lors du build
-    @Test
-    public void methTest(){
-        assert(true);
     }
 }

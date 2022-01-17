@@ -7,7 +7,7 @@ public class Personnage {
     public String nom;
     public int solde;
     public Case position;
-    public List<Propriete> mesProprietes = new ArrayList<Propriete> ();
+    public List<Propriete> mesProprietes = new ArrayList<Propriete>();
     private int lastDes;
 
     public Personnage(String nom, Case position) {
@@ -21,7 +21,7 @@ public class Personnage {
     }
 
     public void aToiDeJouer(LesDes des) {
-        System.out.println("\nTour de : " +nom + ", solde actuel : " + solde + "€");
+        System.out.println("\nTour de : " + nom + ", solde actuel : " + solde + "€");
         des.lancerDes();
         int resDes = des.getTotalDes();
         System.out.println(nom + " : Lancement des dés : " + resDes);
@@ -32,12 +32,6 @@ public class Personnage {
         position.joueurArrive(this);
 
 
-    }
-
-    public void jouerTour() {
-    }
-
-    public void acheter() {
     }
 
     public boolean proposerAchat(float prix) {
@@ -108,7 +102,7 @@ public class Personnage {
 
     // Stream
 
-    public void afficheChoix(){
+    public void afficheChoix() {
         System.out.println("1 - Acheter Terrain ");
         System.out.println("2 - Construire maison ");
         System.out.println("3 - Fin du tours ");
